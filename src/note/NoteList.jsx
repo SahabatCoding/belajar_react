@@ -10,5 +10,4 @@ export default function NoteList({notes, onChange, onDelete}){
             ))}
         </ul>
     )
-
 }

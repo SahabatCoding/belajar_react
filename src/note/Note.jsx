@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Note ({note, onChange, onDelete}){
     const [isEditing, setIsEditing] = useState(false);
     let component;
-
+   
     function handleChangeText(e){
         const newNote = {...note, text: e.target.value}
         onChange(newNote)
@@ -25,11 +25,16 @@ export default function Note ({note, onChange, onDelete}){
         )
     }
 
+    function handleChangeDone(e){
+        const newNote = {...note, done : e.target.checked}
+        onChange(newNote)
+    }
+
     return (
         <label>
-            <input type="checkbox" checked={note.done} onChange={handleChangeText} />
+            <input type="checkbox" checked={note.done} onChange={handleChangeDone} />
             {component}
-            <button onClick={()=> onDelete(note)} ></button>
+            <button onClick={()=> onDelete(note)} >Delete</button>
         </label>
     )
 }
