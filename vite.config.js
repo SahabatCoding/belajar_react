@@ -13,7 +13,8 @@ export default defineConfig({
         task : "task.html",
         counter : "counter.html",
         note : "note.html",
-        product : "product.html"
+        product : "product.html",
+        profile : "profile.html"
       }
     }
   }
